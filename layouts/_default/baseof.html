@@ -10,8 +10,18 @@
 			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
 			rel="stylesheet"
         />
+        {{ if not .Site.IsServer }}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57528936-4"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-	</head>
+            gtag('config', 'UA-57528936-4');
+            </script>
+        {{ end }}
+    </head>
 	<body class="has-background-grey-lighter">
         {{ block "main" . }}{{ end }}
         <footer class="footer has-text-centered" style="margin-top: 3rem; border-top: 1px solid #d4d4d4">
