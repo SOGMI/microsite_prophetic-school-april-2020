@@ -1,0 +1,67 @@
+{{ define "main" }}
+<main id="main-content">
+	<section class="hero is-relative is-light is-bold is-medium has-background-image">
+		<div class="image-overlay" style="background-image: url(https://images.ctfassets.net/vfgh62eq5a4k/RWUg9gUusab2o9y26gFSS/06648a0e7b00390812c4c4d984562eaf/online_prophetic_school_thumb.jpg)"></div>
+		<div class="hero-body">
+			<div class="container has-text-centered">
+				<div class="field">
+					<figure>
+						<img src="https://images.ctfassets.net/vfgh62eq5a4k/5SPbzorfOguiSYUAsEu4aw/b03106ded09c4ac6e60e259d85582267/SOGMI_LOGO_-_website_black_text-01b.png?w=200" alt="">
+					</figure>
+				</div>
+				<h1 class="title">
+					Online Prophetic School
+				</h1>
+				<div class="subtitle">
+					April 2020
+				</div>
+			</div>
+		</div>
+	</section>
+	{{ range .Params.sections }}
+		<section class="section">
+			<div class="container">
+				{{ with .title }}
+					<h2 class="title">{{ . }}</h2>
+				{{ end }}
+				{{ with .subtitle }}
+					<div class="subtitle">Starts April 16, 2020 at 7:00 PM CST</div>
+				{{ end }}
+				{{ with .videoUrl }}
+				<div class="field" style="margin-bottom: 2.5rem">
+					<a href="{{ . }}" class="button is-small is-primary">Watch On Youtube</a>
+				</div>
+				{{ $videoUrl := urls.Parse . }}
+				{{ $videoId := $videoUrl.Query.v }}
+				{{ $videoIdString := replace (replace (print $videoId) "[" "") "]" "" }}
+				<div class="columns is-variable is-0">
+					<div class="column is-two-thirds" style="padding-top: 0; padding-bottom: 0">
+						<figure class="image is-16by9">
+							<iframe 
+								width="560"
+								height="315" 
+								src="https://www.youtube.com/embed/{{ $videoIdString }}?controls=1"
+								frameborder="0"
+								allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen>
+							</iframe>
+						</figure>
+					</div>
+					<div class="column" style="padding-top: 0; padding-bottom: 0">
+						<iframe 
+							class="live-chat is-hidden-mobile" 
+							width="100%" 
+							height="auto" 
+							src="https://www.youtube.com/live_chat?v={{ $videoIdString }}&embed_domain=localhost:1313" 
+							frameborder="0">
+						</iframe>
+						<a href="" style="border-radius: 0" class="button is-medium is-info is-fullwidth is-hidden-tablet-only is-hidden-desktop-only is-hidden-widescreen-only">Join the live chat on Youtube</a>
+					</div>
+				</div>
+				{{ end }}
+			</div>		
+		</section>
+	{{ end }} 
+</main>
+	{{ partial "loginform" . }}
+{{ end }}

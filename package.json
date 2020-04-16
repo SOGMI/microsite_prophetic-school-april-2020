@@ -1,0 +1,24 @@
+{
+	"name": "prophetic-school-2020",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"autoprefixer": "^9.7.6",
+		"bulma": "^0.8.2",
+		"fs-extra": "^9.0.0",
+		"node-sass": "^4.13.1",
+		"postcss": "^7.0.27"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"import-bulma": "node importSassModules",
+		"prestart": "npm run import-bulma",
+		"start": "hugo server",
+		"prebuild": "npm run import-bulma",
+		"build": "hugo --minify"
+	},
+	"author": "",
+	"license": "ISC"
+}

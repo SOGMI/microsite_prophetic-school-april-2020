@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Online Prophetic School 04-2020</title>
+		{{ $sass := resources.Get "styles/main.scss" | toCSS | minify }}
+		<link rel="stylesheet" href="{{ $sass.RelPermalink }}" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+        />
+
+	</head>
+	<body class="has-background-grey-lighter">
+        {{ block "main" . }}{{ end }}
+        <footer class="footer has-text-centered" style="margin-top: 3rem; border-top: 1px solid #d4d4d4">
+            Copyright 2020 Sons of God International
+        </footer>
+        {{ $js := resources.Get "js/auth.js" | minify }}
+        <script src="{{ $js.RelPermalink }}"></script>
+	</body>
+</html>
