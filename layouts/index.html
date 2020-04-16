@@ -29,7 +29,7 @@
 				{{ end }}
 				{{ with .videoUrl }}
 				<div class="field" style="margin-bottom: 2.5rem">
-					<a href="{{ . }}" class="button is-small is-primary">Watch On Youtube</a>
+					<a href="{{ . }}" target="_blank" class="button is-small is-primary">Watch On Youtube</a>
 				</div>
 				{{ $videoUrl := urls.Parse . }}
 				{{ $videoId := $videoUrl.Query.v }}
@@ -55,7 +55,7 @@
 							src="https://www.youtube.com/live_chat?v={{ $videoIdString }}&embed_domain=prophetic-school-2020.sogmi.org" 
 							frameborder="0">
 						</iframe>
-						<a href="" style="border-radius: 0" class="button is-medium is-info is-fullwidth is-hidden-tablet-only is-hidden-desktop-only is-hidden-widescreen-only">Join the live chat on Youtube</a>
+						<a href="{{ . }}" target="_blank" style="border-radius: 0" class="button is-medium is-info is-fullwidth is-hidden-tablet-only is-hidden-desktop-only is-hidden-widescreen-only">Join the live chat on Youtube</a>
 					</div>
 				</div>
 				{{ end }}
