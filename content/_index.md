@@ -12,5 +12,5 @@ sections:
   - title: Follow Up Session
     subtitle: Starts April 24, 2020 at 7:00 PM CST
     videoUrl: https://www.youtube.com/watch?v=6SMyyLiupg0
-    downloadUrl:
+    downloadUrl: https://drive.google.com/a/sogmi.org/file/d/1Hm2PXp19x8XamAwI1l82xbGjQAqYQmbF/view?usp=sharing
 ---
