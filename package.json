@@ -8,7 +8,7 @@
 		"bulma": "^0.8.2",
 		"fs-extra": "^9.0.0",
 		"node-sass": "^4.13.1",
-		"postcss": "^7.0.27"
+		"postcss": "^8.2.10"
 	},
 	"devDependencies": {},
 	"scripts": {
